@@ -37,7 +37,6 @@ const BurketList = () => {
           <FontAwesomeIcon className="faXmark" icon={faXmark}/>
         </TodoCheck>
       ))}
-      안녕하세요
       
     </>
   );

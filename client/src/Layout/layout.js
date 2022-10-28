@@ -15,9 +15,7 @@ const Layout = ({ children }) => {
                 </Link>
             </Lcontainer>
             <Rcontainer>
-                <CenterBox>
-                    <div> {children} </div>
-                </CenterBox>
+                <div className="content"> {children} </div>
             </Rcontainer>
         </ALL>
     </>
@@ -58,15 +56,16 @@ const P = styled.div`
 `
 
 const Rcontainer = styled.div`
-    width: 1620px;
-    height: 1080px;
-    border: 1px solid aqua;
-`
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    background-color: #F4F4F4;
 
-const CenterBox = styled.div`
-    width: 600px;
-    height: 1080px;
-    border: 1px solid aqua;
-    margin: 0 auto;
-    padding-top: 70px;
+    & .content {
+        width: fit-content;
+        height: auto;
+        margin: 0 auto;
+    }
 `

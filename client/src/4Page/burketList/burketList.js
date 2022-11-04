@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPen, faXmark } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
 const BurketList = () => {
@@ -26,8 +28,11 @@ const BurketList = () => {
             <input 
               type={"text"} 
               value={item.text}
-              readOnly
             />
+            <div className="iconBox">
+                <FontAwesomeIcon className="penIcon" icon={faPen}/>
+                <FontAwesomeIcon className="XIcon" icon={faXmark}/>
+              </div>
           </div>
         </Buket>
       ))}
@@ -39,7 +44,7 @@ export default BurketList;
 
 
 const Buket = styled.div`
-  width: 100%;
+  width: 310px;
   height: 60px;
   margin: 0 auto;
   margin-top: 13px;
@@ -48,17 +53,37 @@ const Buket = styled.div`
   justify-content: space-between;
 
   & .inputBox {
-    width: 100%;
-    height: 100%;
+    width: 310px;
+    height: 60px;
     border-radius: 15px;
+    padding: 0 30px;
     background-color: #FFCCCC;
     display: flex;
-    padding-left: 30px;
     align-items: center;
+    justify-content: space-between;
+
+    .iconBox {
+      width: auto;
+      height: auto;
+      display: flex;
+      align-items: center;
+      color: white;
+      gap: 10px;
+
+      .penIcon {
+        width: 12px;
+        height: 12px;
+      }
+
+      .XIcon {
+        width: 15px;
+        height: 15px;
+      }
+    }
   }
 
   & input {
-    width: 160px;
+    max-width: 40%;
     border: none;
     font-family: 'SB 어그로 L';
     background-color: #FFCCCC;

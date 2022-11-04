@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faXmark } from "@fortawesome/free-solid-svg-icons"
+import { faPen, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 const TodoList = () => {
@@ -33,6 +33,10 @@ const TodoList = () => {
                 value={item.text}
                 readOnly
               />
+              <div className="iconBox">
+                <FontAwesomeIcon className="penIcon" icon={faPen}/>
+                <FontAwesomeIcon className="XIcon" icon={faXmark}/>
+              </div>
             </div>
           </TodoCheck>
         ))}
@@ -74,9 +78,30 @@ const TodoCheck = styled.div`
     height: 100%;
     border-radius: 15px;
     background-color: white;
+
+    padding: 0 30px;
     display: flex;
-    padding-left: 30px;
     align-items: center;
+    justify-content: space-between;
+
+    .iconBox {
+      width: auto;
+      height: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #C4C4C4;
+
+      .penIcon {
+        width: 12px;
+        height: 12px;
+      }
+
+      .XIcon {
+        width: 15px;
+        height: 15px;
+      }
+    }
   }
 
   & input {
@@ -87,6 +112,13 @@ const TodoCheck = styled.div`
     font-size: 16px;
     :focus {
       outline: none;
+    }
+
+    ::after {
+      content: url('./img/square-regular.svg');
+      width: 20px;
+      height: 20px;
+      display: inline-block;
     }
   }
 `

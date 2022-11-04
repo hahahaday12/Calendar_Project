@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const TodoListDone = () => {
 
@@ -26,6 +28,9 @@ const TodoListDone = () => {
                 value={item.text}
                 readOnly
               />
+              <div className="checkDot">
+                <FontAwesomeIcon className="faCheck" icon={faCheck}/>
+              </div>
             </div>
           </TodoCheck>
         ))}
@@ -39,17 +44,18 @@ export default TodoListDone;
 
 const TodoDoneWrap = styled.div`
   width: 276px;
-  height: fit-content;
   padding: 15px;
   border-radius: 15px;
-  background-color: #7A90E2;
+  height: fit-content;
+  background-color: white;
+  border: 2px solid #7A90E2;
 
   & p {
     text-align: center;
     margin: 30px 0 40px 0;
     font-size: 22px;
     font-family: 'SB 어그로 M';
-    color: white;
+    color: #7A90E2;
   }
 `
 
@@ -66,17 +72,36 @@ const TodoCheck = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 15px;
-    background-color: white;
+    background-color: #7A90E2;
     display: flex;
-    padding-left: 30px;
+    padding: 0 30px;
     align-items: center;
+    justify-content: space-between;
+
+    .checkDot {
+      width: 17px;
+      height: 17px;
+      border-radius: 10px;
+      background-color: white;
+
+      .faCheck {
+        width: 12px;
+        margin: 0 auto;
+        position: relative;
+        bottom: 2px;
+        left: 3px;
+        color: #7A90E2;
+      }
+    }
   }
 
   & input {
     width: 160px;
     border: none;
     font-family: 'SB 어그로 L';
-    color: #7A90E2;
+    color: white;
+    
+    background-color: #7A90E2;
     font-size: 16px;
     :focus {
       outline: none;

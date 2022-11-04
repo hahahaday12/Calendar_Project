@@ -8,23 +8,25 @@ const BurketListForm = () => {
   return (
     <>
       <BurketWhiteBox>
+
         <div className="dateWrap">
           <div className="dateBox">
             <p>2022</p>
           </div>
           <p className="burketText">Burket List</p>
           
-        <TodoInputWrap>
-          <input
-            type={"text"}
-            placeholder={"버킷리스트를 추가해 주세요"}
-          />
-          <FontAwesomeIcon className="faPlus" icon={faPlus}/>
-        </TodoInputWrap>
+          <BukerInputWrap>
+            <input
+              type={"text"}
+              placeholder={"버킷리스트를 추가해 주세요"}
+            />
+            <FontAwesomeIcon className="faPlus" icon={faPlus}/>
+          </BukerInputWrap>
         </div>
         
         <BurketList/>
       </BurketWhiteBox>
+
     </>
   );
 }
@@ -32,7 +34,7 @@ const BurketListForm = () => {
 export default BurketListForm;
 
 const BurketWhiteBox = styled.div`
-  width: 380px;
+  width: fit-content;
   height: fit-content;
   padding: 35px;
   margin-left: 40px;
@@ -66,11 +68,12 @@ const BurketWhiteBox = styled.div`
 `
 
 
-const TodoInputWrap = styled.div`
+const BukerInputWrap = styled.div`
   width: 256px;
   height: 22px;
   display: flex;
-  margin: 30px 0 50px 0;
+  margin: 30px auto 50px auto;
+
 
   & p {
     font-size: 18px;

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight, faChevronLeft, faPlus } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import TodoList from "./todoList";
 import TodoListDone from "./todoListDone";
@@ -10,11 +10,11 @@ const TodoListForm = () => {
     <>
       <TodoWhiteBox>
         <div className="dateWrap">
-          <div className="prevBtn"/>
+            <FontAwesomeIcon className="prevBtn" icon={faChevronLeft} />
           <div className="dateBox">
             <p>2022.10.26</p>
           </div>
-          <div className="nextBtn"/>
+            <FontAwesomeIcon className="nextBtn" icon={faChevronRight}/>
         </div>
         
         <TodoInputWrap>
@@ -53,15 +53,15 @@ const TodoWhiteBox = styled.div`
   & .prevBtn {
     width: 15px;
     height: 15px;
-    background-color: #7A90E2;
     margin-right: 30px;
+    color: #545454;
   }
 
   & .nextBtn {
     width: 15px;
     height: 15px;
-    background-color: #7A90E2;
     margin-left: 30px;
+    color: #545454;
   }
 
   & .dateBox {

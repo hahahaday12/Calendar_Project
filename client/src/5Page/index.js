@@ -1,7 +1,7 @@
 import DiaryForm from "./components/diaryForm";
 import Layout from "../Layout/layout"
-import DiaryReadTitle from "./components/diaryReadTitle";
 import ColorForm from "./components/colorForm";
+import DiaryReadTitle from "./components/diaryReadTitle";
 
 const Fivepage = () => {
 

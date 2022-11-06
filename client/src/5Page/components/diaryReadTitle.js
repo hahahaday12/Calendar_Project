@@ -2,6 +2,9 @@ import { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPen, faXmark } from "@fortawesome/free-solid-svg-icons";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from "react-slick";
 
 const DiaryReadTitle = () => {
 
@@ -30,32 +33,51 @@ const DiaryReadTitle = () => {
       title: "일기 제목 보이기",
       color: "#7A90E2",
     },
+    {
+      id: 19,
+      date: "2022.09.20",
+      title: "일기 제목 보이기",
+      color: "#FFCCCC",
+    },
   ])
+
+  const settings = {
+    dots: true,
+    arrow: true,
+    speed: 700,
+    infinite: true,
+    rows: 2,
+    slidesPerRow: 2,
+  }
 
   return (
     <>
       <WhiteContainer>
-        {list.map((item) => (
-          <DiaryBoxContainer key={item.id}>
-            <div className="DiaryWrap">
-              <div 
-                className="dateBox" 
-                style={{color: item.color, borderColor: item.color}}
-              >
-                {item.date}
-                <FontAwesomeIcon className="XIcon" icon={faXmark}/>
-              </div>
-              <div 
-                className="titleBox"
-                style={{backgroundColor: item.color}}
-              >
-                <div>
-                  {item.title}
+        <div className="sliderWrap">
+          <Slider {...settings}>
+            {list.map((item) => (
+              <DiaryBoxContainer key={item.id}>
+                <div className="diaryWrap">
+                  <div 
+                    className="dateBox" 
+                    style={{color: item.color, borderColor: item.color}}
+                  >
+                    {item.date}
+                    <FontAwesomeIcon className="XIcon" icon={faXmark}/>
+                  </div>
+                  <div 
+                    className="titleBox"
+                    style={{backgroundColor: item.color}}
+                  >
+                    <div>
+                      {item.title}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </DiaryBoxContainer>
-        ))}
+              </DiaryBoxContainer>
+            ))}
+          </Slider>
+        </div>
       </WhiteContainer>
     </>
   );
@@ -65,23 +87,22 @@ export default DiaryReadTitle;
 
 const WhiteContainer = styled.div`
   width: 676px;
-  height: 280px;
+  height: 310px;
+  margin: 0 auto;
   background-color: white;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  overflow: hidden;
+
+  & .sliderWrap {
+    margin: 0 auto;
+    padding-top: 10px;
+  }
 `
 
 const DiaryBoxContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: 'SB 어그로 M';
-  margin: 0 auto;
   
-  & .DiaryWrap {
-    width: 265px;
-    height: 85px;
+  & .diaryWrap {
+    margin: 20px 0;
   }
 
   & .dateBox {
@@ -93,7 +114,7 @@ const DiaryBoxContainer = styled.div`
     justify-content: center;
     align-items: center;
     background-color: white;
-
+    margin: 0 auto;
 
     & .XIcon {
       color: #C4C4C4;
@@ -106,6 +127,7 @@ const DiaryBoxContainer = styled.div`
   & .titleBox {
     width: 265px;
     height: 55px;
+    margin: 0 auto;
     border-radius: 0 0 10px 10px;
     color: white;
     display: flex;

@@ -1,7 +1,6 @@
 import Layout from "../Layout/layout"
-import DiaryForm from "../components/diaryForm";
-import TodoListForm from "../components/todoListForm";
-import BurketListForm from "../components/burketListForm";
+import TodoListForm from "./todoList/todoListForm";
+import BurketListForm from "./burketList/burketListForm";
 import styled from "styled-components";
 
 
@@ -14,7 +13,6 @@ const Fourpage = () => {
           <TodoListForm/>
           <BurketListForm/>
         </ListWrap>
-        <DiaryForm/>
       </Layout>
     </>
   )
@@ -24,7 +22,7 @@ export default Fourpage;
 
 
 const ListWrap = styled.div`
-  width: 600px;
+  width: fit-content;
   height: auto;
   display: flex;
   justify-content: space-between;

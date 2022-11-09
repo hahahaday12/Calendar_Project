@@ -1,14 +1,16 @@
-import DiaryForm from "../components/diaryForm";
+import DiaryForm from "./components/diaryForm";
 import Layout from "../Layout/layout"
-import DiaryReadTitle from "./diaryRead/diread";
-import DiaryTitle from "./diaryRead/dititle";
+import ColorForm from "./components/colorForm";
+import DiaryReadTitle from "./components/diaryReadTitle";
 
 const Fivepage = () => {
+
+
   return (
     <>
       <Layout>
+        <ColorForm/>
         <DiaryForm/>
-        <DiaryTitle/>
         <DiaryReadTitle/>
       </Layout>
     </>

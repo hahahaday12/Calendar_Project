@@ -12,17 +12,14 @@ import Fivepage from './5Page';
 function App() {
   return (
     <>
-    
-    <BrowserRouter>
-      
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Onepage/>} />
           <Route path="/twopage" element={<TwoPage/>} />
           <Route path="/fourpage" element={<Fourpage/>} />
           <Route path="/fivepage" element={<Fivepage/>} />
         </Routes>
-      
-    </BrowserRouter>
+      </BrowserRouter>
 {/* 
     const Button = ({ Children }) => {
       return (

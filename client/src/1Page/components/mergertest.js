@@ -1,5 +1,5 @@
 const Mergetest = () => {
-  return()
+  return
 }
 
 export default Mergetest;
